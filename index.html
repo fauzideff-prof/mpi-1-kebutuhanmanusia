@@ -1,0 +1,1117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MPI IPS Kelas 7 - Kebutuhan Manusia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f0f4f8;
+        }
+        .bg-gradient-education {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+        .card-hover {
+            transition: all 0.3s ease;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+        }
+        .active-tab {
+            border-bottom: 4px solid #2563eb;
+            color: #2563eb;
+            font-weight: 600;
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #3b82f6;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 min-h-screen flex flex-col justify-between selection:bg-blue-200">
+
+    <!-- Navigation Header (Selalu Ada Kecuali Di Slide Cover) -->
+    <header id="main-header" class="hidden bg-white/90 backdrop-blur-md shadow-md sticky top-0 z-50 border-b border-slate-200">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3 cursor-pointer" onclick="navigateTo('menu-slide')">
+                <div class="bg-blue-600 text-white p-2 rounded-lg font-bold text-lg shadow-sm">
+                    <i class="fa-solid fa-book-open"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-slate-800 text-base sm:text-lg leading-tight">IPS Kelas 7</h1>
+                    <p class="text-xs text-slate-500 font-medium">SMP Negeri 3 Pakuhaji</p>
+                </div>
+            </div>
+            
+            <div class="flex items-center space-x-2 sm:space-x-4">
+                <button onclick="navigateTo('cover-slide')" title="Kembali ke Judul Utama" class="flex items-center space-x-1 sm:space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-3 py-1.5 rounded-lg text-sm font-medium transition">
+                    <i class="fa-solid fa-house text-blue-600"></i>
+                    <span class="hidden md:inline">Awal (Judul)</span>
+                </button>
+                <button onclick="navigateTo('menu-slide')" title="Kembali ke Menu Utama" class="flex items-center space-x-1 sm:space-x-2 bg-blue-50 hover:bg-blue-100 text-blue-700 px-3 py-1.5 rounded-lg text-sm font-medium transition">
+                    <i class="fa-solid fa-grid-2 text-blue-600"></i>
+                    <span class="hidden md:inline">Menu Utama</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="flex-grow container mx-auto px-4 py-6 max-w-6xl flex flex-col justify-center">
+
+        <!-- SLIDE 1: COVER / JUDUL UTAMA -->
+        <section id="cover-slide" class="slide-content transition-all duration-500 min-h-[80vh] flex flex-col justify-center items-center">
+            <div class="bg-white rounded-3xl shadow-2xl overflow-hidden w-full max-w-4xl border border-slate-100 grid grid-cols-1 md:grid-cols-12">
+                <!-- Sisi Kiri: Informasi Guru & Foto -->
+                <div class="md:col-span-5 bg-gradient-education text-white p-8 flex flex-col items-center justify-center text-center relative overflow-hidden">
+                    <div class="absolute -right-12 -bottom-12 w-40 h-40 bg-white/10 rounded-full blur-xl pointer-events-none"></div>
+                    <div class="absolute -left-12 -top-12 w-40 h-40 bg-blue-400/20 rounded-full blur-xl pointer-events-none"></div>
+                    
+                    <!-- Frame Foto Profil Guru -->
+                    <div class="relative mb-4 group">
+                        <div class="absolute -inset-1 bg-gradient-to-r from-yellow-400 to-pink-500 rounded-full blur opacity-75 group-hover:opacity-100 transition duration-1000 group-hover:duration-200"></div>
+                        <img src="https://drive.google.com/thumbnail?id=1_hGPE_UN0vp1jBq_9GDcVAEdpCIjpi1A&sz=w500" 
+                             alt="A.Fauzi, S.E" 
+                             class="relative w-36 h-36 sm:w-44 sm:h-44 rounded-full object-cover border-4 border-white shadow-xl bg-slate-200"
+                             onerror="this.onerror=null; this.src='https://placehold.co/200x200/2563eb/ffffff?text=A.Fauzi,+S.E';">
+                    </div>
+
+                    <h3 class="text-xl font-bold tracking-wide">A.Fauzi, S.E</h3>
+                    <p class="text-blue-200 text-sm mt-1 font-light">Guru IPS</p>
+                    <div class="mt-3 bg-white/10 backdrop-blur-md px-4 py-1.5 rounded-full text-xs font-semibold text-blue-100 border border-white/20">
+                        <i class="fa-solid fa-school mr-1"></i> SMP Negeri 3 Pakuhaji
+                    </div>
+                </div>
+
+                <!-- Sisi Kanan: Judul & Tombol Masuk -->
+                <div class="md:col-span-7 p-8 sm:p-12 flex flex-col justify-between items-start bg-slate-50/50">
+                    <div>
+                        <div class="inline-flex items-center space-x-2 bg-blue-100 text-blue-800 text-xs font-bold px-3 py-1 rounded-full mb-4">
+                            <i class="fa-solid fa-graduation-cap"></i>
+                            <span>MEDIA PEMBELAJARAN INTERAKTIF (MPI)</span>
+                        </div>
+                        <h1 class="text-3xl sm:text-4xl font-extrabold text-slate-900 leading-tight mb-3">
+                            KEBUTUHAN MANUSIA
+                        </h1>
+                        <p class="text-slate-600 text-base mb-6 leading-relaxed">
+                            Mata Pelajaran Ilmu Pengetahuan Sosial (IPS) Kelas 7 Fase D. Pelajari jenis-jenis kebutuhan hidup manusia secara interaktif dan menyenangkan!
+                        </p>
+                    </div>
+
+                    <div class="w-full pt-4 border-t border-slate-200">
+                        <button onclick="navigateTo('menu-slide')" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-6 rounded-2xl shadow-lg hover:shadow-blue-500/30 transition duration-300 flex items-center justify-center space-x-3 text-lg group">
+                            <span>Mulai Pembelajaran</span>
+                            <i class="fa-solid fa-arrow-right group-hover:translate-x-1 transition-transform"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE 2: MENU PEMBELAJARAN -->
+        <section id="menu-slide" class="slide-content hidden transition-all duration-500">
+            <div class="text-center mb-8">
+                <span class="text-blue-600 font-bold text-sm tracking-wider uppercase bg-blue-50 px-3 py-1 rounded-full">Menu Pembelajaran</span>
+                <h2 class="text-3xl font-extrabold text-slate-800 mt-2">Pilih Modul Pembelajaran</h2>
+                <p class="text-slate-500 text-sm mt-1">Silakan pilih menu di bawah ini untuk memulai belajar</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Menu 1: Tujuan Pembelajaran -->
+                <div onclick="navigateTo('tujuan-slide')" class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 cursor-pointer card-hover flex flex-col justify-between group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-emerald-100 text-emerald-600 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-bullseye"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-lg group-hover:text-emerald-600 transition">Tujuan Pembelajaran</h3>
+                            <p class="text-xs text-slate-500">Capaian & target belajar</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 line-clamp-2">Mengetahui kompetensi yang harus dicapai dalam materi kebutuhan manusia.</p>
+                    <span class="text-emerald-600 font-semibold text-xs flex items-center">Buka Menu <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                </div>
+
+                <!-- Menu 2: Apersepsi -->
+                <div onclick="navigateTo('apersepsi-slide')" class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 cursor-pointer card-hover flex flex-col justify-between group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-amber-100 text-amber-600 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-lightbulb"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-lg group-hover:text-amber-600 transition">Apersepsi & Video</h3>
+                            <p class="text-xs text-slate-500">Pengantar & Video Pemantik</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 line-clamp-2">Saksikan video pemantik untuk memahami fenomena kebutuhan sehari-hari.</p>
+                    <span class="text-amber-600 font-semibold text-xs flex items-center">Buka Menu <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                </div>
+
+                <!-- Menu 3: Materi Ajar -->
+                <div onclick="navigateTo('materi-slide')" class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 cursor-pointer card-hover flex flex-col justify-between group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-blue-100 text-blue-600 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-book-bookmark"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-lg group-hover:text-blue-600 transition">Materi Ajar Lengkap</h3>
+                            <p class="text-xs text-slate-500">Materi Tabbed & Contoh</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 line-clamp-2">Penjelasan terstruktur mengenai macam-macam kebutuhan manusia beserta contohnya.</p>
+                    <span class="text-blue-600 font-semibold text-xs flex items-center">Buka Menu <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                </div>
+
+                <!-- Menu 4: Latihan Soal -->
+                <div onclick="navigateTo('latihan-slide')" class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 cursor-pointer card-hover flex flex-col justify-between group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-indigo-100 text-indigo-600 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-pen-to-square"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-lg group-hover:text-indigo-600 transition">Latihan Soal (10 Soal)</h3>
+                            <p class="text-xs text-slate-500">Uji Pemahaman (Nilai 100)</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 line-clamp-2">Kerjakan 10 soal pilihan ganda. Pilihan jawaban hanya dapat dipilih 1 kali!</p>
+                    <span class="text-indigo-600 font-semibold text-xs flex items-center">Buka Menu <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                </div>
+
+                <!-- Menu 5: Kuis Interaktif -->
+                <div onclick="navigateTo('kuis-slide')" class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 cursor-pointer card-hover flex flex-col justify-between group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-purple-100 text-purple-600 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-lg group-hover:text-purple-600 transition">Kuis Interaktif</h3>
+                            <p class="text-xs text-slate-500">Wayground Interactive Quiz</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 line-clamp-2">Tantangan kuis interaktif langsung dari platform Wayground.</p>
+                    <span class="text-purple-600 font-semibold text-xs flex items-center">Buka Menu <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                </div>
+
+                <!-- Menu 6: Refleksi -->
+                <div onclick="navigateTo('refleksi-slide')" class="bg-white rounded-2xl p-6 shadow-md border border-slate-100 cursor-pointer card-hover flex flex-col justify-between group">
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="w-14 h-14 bg-rose-100 text-rose-600 rounded-2xl flex items-center justify-center text-2xl group-hover:scale-110 transition">
+                            <i class="fa-solid fa-heart-pulse"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-800 text-lg group-hover:text-rose-600 transition">Refleksi Belajar</h3>
+                            <p class="text-xs text-slate-500">Umpan Balik Diri</p>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-600 mb-4 line-clamp-2">Evaluasi perasaan dan tingkat pemahaman materi yang telah dipelajari.</p>
+                    <span class="text-rose-600 font-semibold text-xs flex items-center">Buka Menu <i class="fa-solid fa-chevron-right ml-1 text-[10px]"></i></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE: TUJUAN PEMBELAJARAN -->
+        <section id="tujuan-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100">
+                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-12 h-12 bg-emerald-100 text-emerald-600 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-bullseye"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">Tujuan Pembelajaran</h2>
+                        <p class="text-xs text-slate-500">Capaian Pembelajaran IPS Kelas 7 - Bab Kebutuhan Manusia</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+                    <div class="space-y-4">
+                        <div class="bg-emerald-50 border-l-4 border-emerald-500 p-4 rounded-r-xl">
+                            <h4 class="font-bold text-emerald-900 text-sm mb-1"><i class="fa-solid fa-check-circle mr-2"></i>Tujuan Utama:</h4>
+                            <p class="text-emerald-800 text-sm">
+                                Peserta didik mampu <strong>menentukan dan mengklasifikasikan macam-macam kebutuhan manusia</strong> berdasarkan tingkat kepentingan, waktu pemenuhan, sifat, dan subjeknya dengan tepat.
+                            </p>
+                        </div>
+
+                        <div class="space-y-3">
+                            <h4 class="font-semibold text-slate-700 text-sm">Indikator Pencapaian:</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-start text-sm text-slate-600">
+                                    <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2.5 text-xs"></i>
+                                    <span>Menjelaskan pengertian kebutuhan manusia secara umum.</span>
+                                </li>
+                                <li class="flex items-start text-sm text-slate-600">
+                                    <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2.5 text-xs"></i>
+                                    <span>Membedakan kebutuhan primer, sekunder, dan tersier.</span>
+                                </li>
+                                <li class="flex items-start text-sm text-slate-600">
+                                    <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2.5 text-xs"></i>
+                                    <span>Mengidentifikasi kebutuhan berdasarkan waktu pemenuhannya (sekarang vs masa depan).</span>
+                                </li>
+                                <li class="flex items-start text-sm text-slate-600">
+                                    <i class="fa-solid fa-circle-check text-emerald-500 mt-1 mr-2.5 text-xs"></i>
+                                    <span>Mengkategorikan kebutuhan berdasarkan sifat (jasmani & rohani) serta subjek (individual & kelompok).</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="flex justify-center">
+                        <img src="https://placehold.co/400x300/10b981/ffffff?text=Tujuan+Pembelajaran+IPS" alt="Ilustrasi Tujuan Pembelajaran" class="rounded-2xl shadow-md w-full max-w-sm object-cover">
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi Lanjut/Kembali -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button onclick="navigateTo('menu-slide')" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-xl font-medium text-sm transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Menu Utama</span>
+                    </button>
+                    <button onclick="navigateTo('apersepsi-slide')" class="flex items-center space-x-2 bg-emerald-600 hover:bg-emerald-700 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition shadow-md">
+                        <span>Lanjut: Apersepsi</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE: APERSEPSI & VIDEO -->
+        <section id="apersepsi-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100">
+                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-12 h-12 bg-amber-100 text-amber-600 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">Apersepsi & Video Pemantik</h2>
+                        <p class="text-xs text-slate-500">Mari mengamati situasi kehidupan sehari-hari sebelum masuk ke materi utama</p>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+                    <!-- Media / Video Box -->
+                    <div class="lg:col-span-7 bg-slate-900 rounded-2xl overflow-hidden shadow-lg border border-slate-800 flex flex-col justify-center items-center relative min-h-[280px]">
+                        <!-- Embedded Drive Video / Player Preview -->
+                        <iframe class="w-full h-64 sm:h-80 rounded-2xl" src="https://drive.google.com/file/d/1yvNPX-hyMjjdNVvRf47BJqe8q3z_lMoL/preview" allow="autoplay" allowfullscreen></iframe>
+                        <div class="p-3 bg-slate-800 w-full text-center text-xs text-slate-300 flex justify-between items-center px-4">
+                            <span><i class="fa-solid fa-circle-play text-amber-400 mr-1"></i> Video Pemantik Apersepsi</span>
+                            <a href="https://drive.google.com/file/d/1yvNPX-hyMjjdNVvRf47BJqe8q3z_lMoL/view?usp=drive_link" target="_blank" class="text-blue-400 hover:underline text-xs">
+                                Buka di Tab Baru <i class="fa-solid fa-arrow-up-right-from-square ml-0.5"></i>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Pertanyaan Pemantik -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <div class="bg-amber-50 p-5 rounded-2xl border border-amber-200">
+                            <h3 class="font-bold text-amber-900 text-base mb-2 flex items-center">
+                                <i class="fa-solid fa-comments text-amber-600 mr-2"></i>Pertanyaan Pemantik:
+                            </h3>
+                            <ul class="space-y-3 text-slate-700 text-sm">
+                                <li class="bg-white p-3 rounded-xl shadow-sm border border-amber-100">
+                                    <strong>1.</strong> Mengapa setiap orang membutuhkan makanan, pakaian, dan tempat tinggal?
+                                </li>
+                                <li class="bg-white p-3 rounded-xl shadow-sm border border-amber-100">
+                                    <strong>2.</strong> Bisakah manusia hidup tanpa HP/Smartphone saat ini? Apakah HP kebutuhan utama?
+                                </li>
+                                <li class="bg-white p-3 rounded-xl shadow-sm border border-amber-100">
+                                    <strong>3.</strong> Mengapa kebutuhan setiap orang bisa berbeda-beda?
+                                </li>
+                            </ul>
+                        </div>
+                        <p class="text-xs text-slate-500 italic">
+                            *Saksikan video apersepsi di samping untuk memantik pemahaman awal kamu mengenai perbedaan antara Kebutuhan dan Keinginan.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi Lanjut/Kembali -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button onclick="navigateTo('tujuan-slide')" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-xl font-medium text-sm transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Sebelumnya: Tujuan</span>
+                    </button>
+                    <button onclick="navigateTo('materi-slide')" class="flex items-center space-x-2 bg-amber-600 hover:bg-amber-700 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition shadow-md">
+                        <span>Lanjut: Materi Ajar</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE: MATERI AJAR LENGKAP -->
+        <section id="materi-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+                <div class="flex items-center justify-between mb-6 pb-4 border-b border-slate-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-blue-100 text-blue-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-book-open-reader"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-800">Materi Ajar: Kebutuhan Manusia</h2>
+                            <p class="text-xs text-slate-500">Silakan klik tab di bawah untuk mempelajari setiap klasifikasi kebutuhan</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- NAVIGATION TAB DALAM MATERI -->
+                <div class="flex flex-wrap border-b border-slate-200 gap-2 mb-6">
+                    <button onclick="switchTab('tab-tingkat')" id="btn-tab-tingkat" class="materi-tab active-tab px-4 py-3 text-sm font-semibold flex items-center space-x-2 rounded-t-lg transition">
+                        <i class="fa-solid fa-layer-group"></i>
+                        <span>1. Tingkat Kepentingan</span>
+                    </button>
+                    <button onclick="switchTab('tab-waktu')" id="btn-tab-waktu" class="materi-tab text-slate-500 hover:text-blue-600 px-4 py-3 text-sm font-semibold flex items-center space-x-2 rounded-t-lg transition">
+                        <i class="fa-solid fa-clock"></i>
+                        <span>2. Waktu Pemenuhan</span>
+                    </button>
+                    <button onclick="switchTab('tab-sifat')" id="btn-tab-sifat" class="materi-tab text-slate-500 hover:text-blue-600 px-4 py-3 text-sm font-semibold flex items-center space-x-2 rounded-t-lg transition">
+                        <i class="fa-solid fa-heart"></i>
+                        <span>3. Sifat Kebutuhan</span>
+                    </button>
+                    <button onclick="switchTab('tab-subjek')" id="btn-tab-subjek" class="materi-tab text-slate-500 hover:text-blue-600 px-4 py-3 text-sm font-semibold flex items-center space-x-2 rounded-t-lg transition">
+                        <i class="fa-solid fa-users"></i>
+                        <span>4. Subjek Pemenuh</span>
+                    </button>
+                </div>
+
+                <!-- ISI TAB MATERI -->
+                <div id="tab-contents">
+                    <!-- TAB 1: Intensitas/Tingkat Kepentingan -->
+                    <div id="tab-tingkat" class="tab-pane space-y-6">
+                        <div class="bg-blue-50/50 p-4 rounded-xl border border-blue-100">
+                            <h3 class="text-lg font-bold text-blue-900 mb-2">Kebutuhan Berdasarkan Tingkat Kepentingan (Intensitas)</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Dibagi menjadi 3 tingkatan hirarki mendasar yang menentukan kelangsungan hidup manusia:
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Primer -->
+                            <div class="bg-white p-5 rounded-2xl border-2 border-red-100 shadow-sm hover:border-red-300 transition">
+                                <span class="bg-red-100 text-red-700 text-xs font-bold px-2.5 py-1 rounded-full">1. Kebutuhan Primer</span>
+                                <h4 class="font-bold text-slate-800 mt-3 mb-2 text-base">Kebutuhan Pokok/Utama</h4>
+                                <p class="text-xs text-slate-600 mb-3">Kebutuhan mutlak yang harus dipenuhi agar manusia dapat mempertahankan hidupnya.</p>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+                                    <p class="font-semibold text-slate-700">Contoh Konkret:</p>
+                                    <p class="text-slate-600">• Pangan (Nasi, Air)</p>
+                                    <p class="text-slate-600">• Sandang (Pakaian)</p>
+                                    <p class="text-slate-600">• Papan (Rumah Tinggal)</p>
+                                </div>
+                            </div>
+
+                            <!-- Sekunder -->
+                            <div class="bg-white p-5 rounded-2xl border-2 border-amber-100 shadow-sm hover:border-amber-300 transition">
+                                <span class="bg-amber-100 text-amber-700 text-xs font-bold px-2.5 py-1 rounded-full">2. Kebutuhan Sekunder</span>
+                                <h4 class="font-bold text-slate-800 mt-3 mb-2 text-base">Kebutuhan Pelengkap</h4>
+                                <p class="text-xs text-slate-600 mb-3">Kebutuhan yang dipenuhi setelah kebutuhan primer terpenuhi untuk melengkapi kehidupan.</p>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+                                    <p class="font-semibold text-slate-700">Contoh Konkret:</p>
+                                    <p class="text-slate-600">• Sepeda motor / Sepeda</p>
+                                    <p class="text-slate-600">• Smartphone / Laptop</p>
+                                    <p class="text-slate-600">• Peralatan Rumah Tangga</p>
+                                </div>
+                            </div>
+
+                            <!-- Tersier -->
+                            <div class="bg-white p-5 rounded-2xl border-2 border-purple-100 shadow-sm hover:border-purple-300 transition">
+                                <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2.5 py-1 rounded-full">3. Kebutuhan Tersier</span>
+                                <h4 class="font-bold text-slate-800 mt-3 mb-2 text-base">Kebutuhan Mewah</h4>
+                                <p class="text-xs text-slate-600 mb-3">Kebutuhan akan barang-barang mewah untuk meningkatkan status sosial/prestise.</p>
+                                <div class="bg-slate-50 p-3 rounded-xl border border-slate-100 text-xs space-y-1">
+                                    <p class="font-semibold text-slate-700">Contoh Konkret:</p>
+                                    <p class="text-slate-600">• Mobil Mewah / Sport</p>
+                                    <p class="text-slate-600">• Perhiasan Emas / Berlian</p>
+                                    <p class="text-slate-600">• Liburan ke Luar Negeri</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 2: Waktu Pemenuhan -->
+                    <div id="tab-waktu" class="tab-pane hidden space-y-6">
+                        <div class="bg-emerald-50/50 p-4 rounded-xl border border-emerald-100">
+                            <h3 class="text-lg font-bold text-emerald-900 mb-2">Kebutuhan Berdasarkan Waktu Pemenuhan</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Membedakan kapan suatu kebutuhan harus dipenuhi, apakah seketika atau dapat ditunda.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-emerald-100 text-emerald-600 rounded-lg flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-bolt"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-lg">1. Kebutuhan Sekarang (Mendesak)</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 mb-4">Kebutuhan yang pemenuhannya tidak dapat ditunda dan harus dipenuhi saat ini juga. Jika ditunda dapat berakibat fatal.</p>
+                                <div class="bg-emerald-50 p-3 rounded-xl text-xs text-emerald-900">
+                                    <strong>Contoh:</strong> Obat bagi orang sakit mendadak, makanan saat lapar, pemadam kebakaran saat kebakaran.
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-indigo-100 text-indigo-600 rounded-lg flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-calendar-days"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-lg">2. Kebutuhan Masa Mendatang</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 mb-4">Kebutuhan yang persiapannya dapat dilakukan dari sekarang untuk dimanfaatkan pada masa yang akan datang.</p>
+                                <div class="bg-indigo-50 p-3 rounded-xl text-xs text-indigo-900">
+                                    <strong>Contoh:</strong> Tabungan pendidikan anak, asuransi kesehatan, dana pensiun.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 3: Sifat Kebutuhan -->
+                    <div id="tab-sifat" class="tab-pane hidden space-y-6">
+                        <div class="bg-purple-50/50 p-4 rounded-xl border border-purple-100">
+                            <h3 class="text-lg font-bold text-purple-900 mb-2">Kebutuhan Berdasarkan Sifatnya</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Berkaitan dengan aspek fisik (jasmani) dan jiwa/mental (rohani) manusia.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-dumbbell"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-lg">1. Kebutuhan Jasmani (Fisik)</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 mb-4">Kebutuhan yang berhubungan langsung dengan badan, fisik, atau tubuh manusia.</p>
+                                <div class="bg-orange-50 p-3 rounded-xl text-xs text-orange-900">
+                                    <strong>Contoh:</strong> Olahraga teratur, Istirahat/Tidur, Makanan bergizi, Pakaian nyaman.
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-pink-100 text-pink-600 rounded-lg flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-brain"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-lg">2. Kebutuhan Rohani (Jiwa)</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 mb-4">Kebutuhan yang berkaitan dengan kesehatan jiwa, ketenangan pikiran, dan kebahagiaan batin.</p>
+                                <div class="bg-pink-50 p-3 rounded-xl text-xs text-pink-900">
+                                    <strong>Contoh:</strong> Ibadah/Sembahyang, Rekreasi/Hiburan, Mendengarkan musik, Ilmu pengetahuan.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- TAB 4: Subjek Pemenuh -->
+                    <div id="tab-subjek" class="tab-pane hidden space-y-6">
+                        <div class="bg-teal-50/50 p-4 rounded-xl border border-teal-100">
+                            <h3 class="text-lg font-bold text-teal-900 mb-2">Kebutuhan Berdasarkan Subjek Pemenuhnya</h3>
+                            <p class="text-sm text-slate-600 leading-relaxed">
+                                Dikategorikan berdasarkan pengguna atau pihak yang memanfaatkan kebutuhan tersebut.
+                            </p>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-teal-100 text-teal-600 rounded-lg flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-user"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-lg">1. Kebutuhan Individual (Perorangan)</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 mb-4">Kebutuhan yang hanya berguna bagi diri pribadi/perorangan dan berbeda antar orang.</p>
+                                <div class="bg-teal-50 p-3 rounded-xl text-xs text-teal-900">
+                                    <strong>Contoh:</strong> Stetoskop bagi Dokter, Cangkul bagi Petani, Kacamata minus bagi penderita rabun.
+                                </div>
+                            </div>
+
+                            <div class="bg-white p-6 rounded-2xl border border-slate-200 shadow-sm hover:shadow-md transition">
+                                <div class="flex items-center space-x-3 mb-3">
+                                    <div class="w-10 h-10 bg-cyan-100 text-cyan-600 rounded-lg flex items-center justify-center font-bold">
+                                        <i class="fa-solid fa-users-gear"></i>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-lg">2. Kebutuhan Kelompok (Kolektif)</h4>
+                                </div>
+                                <p class="text-xs text-slate-600 mb-4">Kebutuhan yang dimanfaatkan secara bersama-sama oleh sekelompok orang atau masyarakat umum.</p>
+                                <div class="bg-cyan-50 p-3 rounded-xl text-xs text-cyan-900">
+                                    <strong>Contoh:</strong> Jalan raya, Jembatan umum, Rumah sakit, Pos ronda, Sekolah.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tombol Navigasi Lanjut/Kembali -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button onclick="navigateTo('apersepsi-slide')" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-xl font-medium text-sm transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Sebelumnya: Apersepsi</span>
+                    </button>
+                    <button onclick="navigateTo('latihan-slide')" class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition shadow-md">
+                        <span>Lanjut: Latihan Soal</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE: LATIHAN SOAL (10 SOAL, NILAI MAKS 100) -->
+        <section id="latihan-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100">
+                <div class="flex flex-wrap items-center justify-between mb-6 pb-4 border-b border-slate-100 gap-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-indigo-100 text-indigo-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-file-pen"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-800">Latihan Soal IPS Kelas 7</h2>
+                            <p class="text-xs text-slate-500">Jumlah Soal: 10 Soal | Bobot per Soal: 10 Point (Total: 100)</p>
+                        </div>
+                    </div>
+
+                    <!-- Indikator Skor -->
+                    <div class="bg-indigo-50 px-4 py-2 rounded-2xl border border-indigo-100 text-right">
+                        <span class="text-xs text-indigo-500 font-semibold uppercase tracking-wider block">Skor Saat Ini</span>
+                        <span id="current-score" class="text-2xl font-extrabold text-indigo-700">0 / 100</span>
+                    </div>
+                </div>
+
+                <!-- Peringatan Jawaban 1 Kali Pilih -->
+                <div class="bg-amber-50 border-l-4 border-amber-400 p-3 rounded-r-xl mb-6 text-xs text-amber-800 flex items-center">
+                    <i class="fa-solid fa-triangle-exclamation mr-2 text-amber-600 text-base"></i>
+                    <span><strong>Aturan:</strong> Kamu hanya dapat memilih jawaban <strong>1 kali</strong> pada tiap soal. Pilihlah jawaban dengan cermat!</span>
+                </div>
+
+                <!-- Quiz Container -->
+                <div id="quiz-container" class="space-y-6">
+                    <!-- Dynamic Question Content Will Render Here -->
+                </div>
+
+                <!-- Hasil Akhir Kuis Latihan -->
+                <div id="quiz-result" class="hidden bg-gradient-to-br from-indigo-900 to-blue-900 text-white rounded-2xl p-8 text-center space-y-4">
+                    <div class="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center mx-auto text-4xl text-yellow-300 shadow-inner">
+                        <i class="fa-solid fa-trophy"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold">Latihan Soal Selesai!</h3>
+                    <p class="text-sm text-blue-200">Terima kasih telah menyelesaikan seluruh soal latihan.</p>
+                    <div class="bg-white/10 backdrop-blur-md rounded-2xl p-6 max-w-sm mx-auto border border-white/20">
+                        <span class="text-xs uppercase tracking-widest text-blue-200 block">Total Nilai Kamu</span>
+                        <span id="final-score-text" class="text-5xl font-extrabold text-yellow-400 my-2 block">0</span>
+                        <span id="score-feedback" class="text-xs font-semibold px-3 py-1 rounded-full bg-white/20 text-white">Cukup Baik</span>
+                    </div>
+                    <button onclick="resetQuiz()" class="mt-4 bg-yellow-400 hover:bg-yellow-300 text-indigo-950 font-bold px-6 py-2.5 rounded-xl transition text-sm">
+                        <i class="fa-solid fa-rotate-right mr-1"></i> Ulangi Latihan
+                    </button>
+                </div>
+
+                <!-- Tombol Navigasi Lanjut/Kembali -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button onclick="navigateTo('materi-slide')" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-xl font-medium text-sm transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Sebelumnya: Materi Ajar</span>
+                    </button>
+                    <button onclick="navigateTo('kuis-slide')" class="flex items-center space-x-2 bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition shadow-md">
+                        <span>Lanjut: Kuis Interaktif</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE: KUIS INTERAKTIF (WAYGROUND EMBED) -->
+        <section id="kuis-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 flex flex-col items-center">
+                <div class="w-full flex items-center justify-between mb-4 pb-4 border-b border-slate-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-800">Kuis Interaktif Wayground</h2>
+                            <p class="text-xs text-slate-500">Tantangan Kuis Online IPS</p>
+                        </div>
+                    </div>
+                    <a href="https://wayground.com/embed/quiz/68d752744f34c979ad31051c" target="_blank" class="bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-2 rounded-xl transition flex items-center">
+                        <i class="fa-solid fa-up-right-from-square mr-1.5"></i> Buka Layar Penuh
+                    </a>
+                </div>
+
+                <!-- Iframe Container dengan Backup/Fallback Link -->
+                <div class="w-full h-[600px] bg-slate-100 rounded-2xl overflow-hidden border border-slate-200 relative">
+                    <iframe id="wayground-iframe" 
+                            src="https://wayground.com/embed/quiz/68d752744f34c979ad31051c" 
+                            class="w-full h-full border-0" 
+                            allow="autoplay; fullscreen"
+                            title="Wayground Interactive Quiz">
+                    </iframe>
+                </div>
+                <p class="text-xs text-slate-400 mt-3 text-center">Jika kuis tidak tampil, klik tombol "Buka Layar Penuh" di pojok kanan atas.</p>
+
+                <!-- Tombol Navigasi Lanjut/Kembali -->
+                <div class="w-full mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button onclick="navigateTo('latihan-slide')" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-xl font-medium text-sm transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Sebelumnya: Latihan Soal</span>
+                    </button>
+                    <button onclick="navigateTo('refleksi-slide')" class="flex items-center space-x-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition shadow-md">
+                        <span>Lanjut: Refleksi Belajar</span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE: REFLEKSI PEMBELAJARAN -->
+        <section id="refleksi-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100 max-w-3xl mx-auto">
+                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">Refleksi Pembelajaran</h2>
+                        <p class="text-xs text-slate-500">Ungkapkan perasaan dan pemahamanmu setelah belajar materi ini</p>
+                    </div>
+                </div>
+
+                <form onsubmit="handleRefleksiSubmit(event)" class="space-y-6">
+                    <!-- Emosi Pembelajaran -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">1. Bagaimana perasaanmu setelah mempelajari materi ini?</label>
+                        <div class="grid grid-cols-4 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="sangat-senang" class="peer hidden" required>
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">😄</div>
+                                    <span class="text-xs font-medium text-slate-600">Sangat Senang</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="senang" class="peer hidden">
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">🙂</div>
+                                    <span class="text-xs font-medium text-slate-600">Paham</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="bingung" class="peer hidden">
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">🤔</div>
+                                    <span class="text-xs font-medium text-slate-600">Masih Bingung</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="sulit" class="peer hidden">
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">😓</div>
+                                    <span class="text-xs font-medium text-slate-600">Sulit</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pertanyaan Isian Isian Refleksi -->
+                    <div>
+                        <label for="refleksi-paham" class="block text-sm font-semibold text-slate-700 mb-1">2. Hal paling penting apa yang baru kamu pelajari hari ini?</label>
+                        <textarea id="refleksi-paham" rows="3" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none" placeholder="Tuliskan pemahaman terpentingmu..." required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="refleksi-kendala" class="block text-sm font-semibold text-slate-700 mb-1">3. Bagian mana dari materi yang masih perlu dipelajari lagi?</label>
+                        <textarea id="refleksi-kendala" rows="2" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none" placeholder="Tuliskan jika ada kendala..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-6 rounded-xl transition text-sm shadow-md">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Refleksi
+                    </button>
+                </form>
+
+                <div id="refleksi-feedback" class="hidden mt-4 p-4 bg-emerald-100 text-emerald-800 rounded-xl text-center text-sm font-semibold border border-emerald-200">
+                    <i class="fa-solid fa-circle-check mr-2 text-emerald-600"></i> Terima kasih! Refleksi kamu berhasil tersimpan.
+                </div>
+
+                <!-- Tombol Navigasi Kembali ke Menu/Awal -->
+                <div class="mt-8 pt-6 border-t border-slate-100 flex justify-between items-center">
+                    <button onclick="navigateTo('kuis-slide')" class="flex items-center space-x-2 bg-slate-100 hover:bg-slate-200 text-slate-700 px-5 py-2.5 rounded-xl font-medium text-sm transition">
+                        <i class="fa-solid fa-arrow-left"></i>
+                        <span>Sebelumnya: Kuis Interaktif</span>
+                    </button>
+                    <button onclick="navigateTo('menu-slide')" class="flex items-center space-x-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-xl font-semibold text-sm transition shadow-md">
+                        <i class="fa-solid fa-grid-2"></i>
+                        <span>Selesai (Menu Utama)</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SLIDE: KUIS INTERAKTIF (WAYGROUND EMBED) -->
+        <section id="kuis-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-8 shadow-xl border border-slate-100 flex flex-col items-center">
+                <div class="w-full flex items-center justify-between mb-4 pb-4 border-b border-slate-100">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-12 h-12 bg-purple-100 text-purple-600 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-gamepad"></i>
+                        </div>
+                        <div>
+                            <h2 class="text-2xl font-bold text-slate-800">Kuis Interaktif Wayground</h2>
+                            <p class="text-xs text-slate-500">Tantangan Kuis Online IPS</p>
+                        </div>
+                    </div>
+                    <a href="https://wayground.com/embed/quiz/68d752744f34c979ad31051c" target="_blank" class="bg-purple-50 hover:bg-purple-100 text-purple-700 text-xs font-semibold px-3 py-2 rounded-xl transition flex items-center">
+                        <i class="fa-solid fa-up-right-from-square mr-1.5"></i> Buka Layar Penuh
+                    </a>
+                </div>
+
+                <!-- Iframe Container dengan Backup/Fallback Link -->
+                <div class="w-full h-[600px] bg-slate-100 rounded-2xl overflow-hidden border border-slate-200 relative">
+                    <iframe id="wayground-iframe" 
+                            src="https://wayground.com/embed/quiz/68d752744f34c979ad31051c" 
+                            class="w-full h-full border-0" 
+                            allow="autoplay; fullscreen"
+                            title="Wayground Interactive Quiz">
+                    </iframe>
+                </div>
+                <p class="text-xs text-slate-400 mt-3 text-center">Jika kuis tidak tampil, klik tombol "Buka Layar Penuh" di pojok kanan atas.</p>
+            </div>
+        </section>
+
+        <!-- SLIDE: REFLEKSI PEMBELAJARAN -->
+        <section id="refleksi-slide" class="slide-content hidden transition-all duration-500">
+            <div class="bg-white rounded-3xl p-6 sm:p-10 shadow-xl border border-slate-100 max-w-3xl mx-auto">
+                <div class="flex items-center space-x-3 mb-6 pb-4 border-b border-slate-100">
+                    <div class="w-12 h-12 bg-rose-100 text-rose-600 rounded-xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-heart-pulse"></i>
+                    </div>
+                    <div>
+                        <h2 class="text-2xl font-bold text-slate-800">Refleksi Pembelajaran</h2>
+                        <p class="text-xs text-slate-500">Ungkapkan perasaan dan pemahamanmu setelah belajar materi ini</p>
+                    </div>
+                </div>
+
+                <form onsubmit="handleRefleksiSubmit(event)" class="space-y-6">
+                    <!-- Emosi Pembelajaran -->
+                    <div>
+                        <label class="block text-sm font-semibold text-slate-700 mb-2">1. Bagaimana perasaanmu setelah mempelajari materi ini?</label>
+                        <div class="grid grid-cols-4 gap-3">
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="sangat-senang" class="peer hidden" required>
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">😄</div>
+                                    <span class="text-xs font-medium text-slate-600">Sangat Senang</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="senang" class="peer hidden">
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">🙂</div>
+                                    <span class="text-xs font-medium text-slate-600">Paham</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="bingung" class="peer hidden">
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">🤔</div>
+                                    <span class="text-xs font-medium text-slate-600">Masih Bingung</span>
+                                </div>
+                            </label>
+                            <label class="cursor-pointer">
+                                <input type="radio" name="emoji-mood" value="sulit" class="peer hidden">
+                                <div class="p-3 text-center rounded-2xl border-2 border-slate-200 peer-checked:border-rose-500 peer-checked:bg-rose-50 transition">
+                                    <div class="text-3xl mb-1">😓</div>
+                                    <span class="text-xs font-medium text-slate-600">Sulit</span>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pertanyaan Isian Isian Refleksi -->
+                    <div>
+                        <label for="refleksi-paham" class="block text-sm font-semibold text-slate-700 mb-1">2. Hal paling penting apa yang baru kamu pelajari hari ini?</label>
+                        <textarea id="refleksi-paham" rows="3" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none" placeholder="Tuliskan pemahaman terpentingmu..." required></textarea>
+                    </div>
+
+                    <div>
+                        <label for="refleksi-kendala" class="block text-sm font-semibold text-slate-700 mb-1">3. Bagian mana dari materi yang masih perlu dipelajari lagi?</label>
+                        <textarea id="refleksi-kendala" rows="2" class="w-full p-3 rounded-xl border border-slate-200 text-sm focus:ring-2 focus:ring-rose-500 focus:outline-none" placeholder="Tuliskan jika ada kendala..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-rose-600 hover:bg-rose-700 text-white font-bold py-3 px-6 rounded-xl transition text-sm shadow-md">
+                        <i class="fa-solid fa-paper-plane mr-2"></i> Kirim Refleksi
+                    </button>
+                </form>
+
+                <div id="refleksi-feedback" class="hidden mt-4 p-4 bg-emerald-100 text-emerald-800 rounded-xl text-center text-sm font-semibold border border-emerald-200">
+                    <i class="fa-solid fa-circle-check mr-2 text-emerald-600"></i> Terima kasih! Refleksi kamu berhasil tersimpan.
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-slate-200 py-4 text-center text-xs text-slate-500">
+        <p>&copy; 2026 MPI IPS Kelas 7 - SMP Negeri 3 Pakuhaji | Disusun oleh <strong>A.Fauzi, S.E</strong></p>
+    </footer>
+
+    <script>
+        // Data Soal Latihan (10 Soal, Kategori Beragam)
+        const quizData = [
+            {
+                question: "1. Kebutuhan mutlak yang harus dipenuhi oleh manusia agar dapat mempertahankan kelangsungan hidupnya disebut kebutuhan...",
+                options: ["Sekunder", "Primer", "Tersier", "Masa Depan"],
+                correct: 1,
+                explanation: "Kebutuhan Primer adalah kebutuhan utama yang mutlak harus dipenuhi (contoh: makanan, pakaian, tempat tinggal)."
+            },
+            {
+                question: "2. Pak Ahmad membeli sepeda motor untuk menunjang aktivitas bekerja sehari-hari setelah kebutuhan pokok keluarganya terpenuhi. Sepeda motor tersebut termasuk kebutuhan...",
+                options: ["Primer", "Sekunder", "Tersier", "Rohani"],
+                correct: 1,
+                explanation: "Kebutuhan Sekunder dipenuhi setelah kebutuhan primer terpenuhi untuk mempermudah kehidupan."
+            },
+            {
+                question: "3. Perhiasan emas, mobil mewah, dan rekreasi ke luar negeri merupakan contoh dari pemenuhan kebutuhan...",
+                options: ["Tersier", "Sekunder", "Jasmani", "Sekarang"],
+                correct: 0,
+                explanation: "Kebutuhan Tersier adalah kebutuhan akan barang mewah untuk meningkatkan status sosial atau kepuasan."
+            },
+            {
+                question: "4. Seseorang yang tiba-tiba sakit keras harus segera mengonsumsi obat dari dokter. Berdasarkan waktu pemenuhannya, obat termasuk kebutuhan...",
+                options: ["Masa Depan", "Sekarang", "Kelompok", "Individual"],
+                correct: 1,
+                explanation: "Kebutuhan sekarang bersifat mendesak dan tidak dapat ditunda pemenuhannya."
+            },
+            {
+                question: "5. Orang tua yang menyisihkan sebagian pendapatannya setiap bulan untuk tabungan pendidikan anak di perguruan tinggi merupakan pemenuhan kebutuhan...",
+                options: ["Masa Depan", "Sekarang", "Jasmani", "Tersier"],
+                correct: 0,
+                explanation: "Tabungan pendidikan disiapkan dari sekarang untuk dimanfaatkan di masa depan."
+            },
+            {
+                question: "6. Berolahraga secara teratur, istirahat secukupnya, dan makan makanan bergizi merupakan upaya pemenuhan kebutuhan...",
+                options: ["Rohani", "Jasmani", "Kelompok", "Tersier"],
+                correct: 1,
+                explanation: "Kebutuhan Jasmani adalah kebutuhan yang berhubungan langsung dengan fisik dan kesehatan tubuh."
+            },
+            {
+                question: "7. Melakukan ibadah, mendengarkan ceramah agama, dan mendengarkan musik favorit merupakan contoh pemenuhan kebutuhan...",
+                options: ["Jasmani", "Rohani", "Sekunder", "Individual"],
+                correct: 1,
+                explanation: "Kebutuhan Rohani berkaitan dengan ketenangan jiwa, batin, dan kepuasan mental."
+            },
+            {
+                question: "8. Stetoskop bagi seorang dokter dan cangkul bagi seorang petani merupakan contoh kebutuhan berdasarkan subjeknya, yaitu kebutuhan...",
+                options: ["Kelompok", "Kolektif", "Individual", "Jasmani"],
+                correct: 2,
+                explanation: "Kebutuhan Individual adalah kebutuhan yang pemenuhannya disesuaikan dengan profesi atau kondisi perorangan."
+            },
+            {
+                question: "9. Pembangunan jalan raya, jembatan, dan puskesmas merupakan contoh pemenuhan kebutuhan...",
+                options: ["Individual", "Mewah", "Kelompok / Kolektif", "Rohani"],
+                correct: 2,
+                explanation: "Kebutuhan Kelompok/Kolektif dimanfaatkan secara bersama-sama oleh masyarakat umum."
+            },
+            {
+                question: "10. Faktor utama yang menyebabkan kebutuhan manusia bersifat tidak terbatas sedangkan alat pemenuh kebutuhan terbatas adalah...",
+                options: [
+                    "Pertumbuhan penduduk dan kemajuan teknologi",
+                    "Jumlah uang yang beredar terlalu banyak",
+                    "Keinginan manusia yang selalu konstan",
+                    "Sumber daya alam yang tidak pernah habis"
+                ],
+                correct: 0,
+                explanation: "Pertumbuhan penduduk, perkembangan zaman, serta teknologi memicu terus berkembangnya kebutuhan manusia."
+            }
+        ];
+
+        // State variabel
+        let currentAnswers = new Array(quizData.length).fill(null);
+        let userScore = 0;
+
+        // Navigasi Antar Slide
+        function navigateTo(slideId) {
+            // Sembunyikan semua slide
+            const slides = document.querySelectorAll('.slide-content');
+            slides.forEach(slide => slide.classList.add('hidden'));
+
+            // Tampilkan slide tujuan
+            const targetSlide = document.getElementById(slideId);
+            if (targetSlide) {
+                targetSlide.classList.remove('hidden');
+            }
+
+            // Atur Tampilan Header
+            const header = document.getElementById('main-header');
+            if (slideId === 'cover-slide') {
+                header.classList.add('hidden');
+            } else {
+                header.classList.remove('hidden');
+            }
+
+            // Scroll ke atas otomatis
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Tab Navigation di Materi Ajar
+        function switchTab(tabId) {
+            // Sembunyikan semua konten tab
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            tabPanes.forEach(pane => pane.classList.add('hidden'));
+
+            // Deaktifkan semua tombol tab
+            const tabBtns = document.querySelectorAll('.materi-tab');
+            tabBtns.forEach(btn => {
+                btn.classList.remove('active-tab');
+                btn.classList.add('text-slate-500');
+            });
+
+            // Tampilkan tab yang dipilih
+            document.getElementById(tabId).classList.remove('hidden');
+
+            // Aktifkan tombol yang diklik
+            const activeBtn = document.getElementById('btn-' + tabId);
+            activeBtn.classList.add('active-tab');
+            activeBtn.classList.remove('text-slate-500');
+        }
+
+        // Render Soal Latihan (10 Soal)
+        function renderQuiz() {
+            const container = document.getElementById('quiz-container');
+            container.innerHTML = '';
+
+            quizData.forEach((q, qIndex) => {
+                const isAnswered = currentAnswers[qIndex] !== null;
+                const card = document.createElement('div');
+                card.className = "bg-slate-50 p-5 rounded-2xl border border-slate-200 shadow-sm transition";
+
+                let optionsHTML = '';
+                q.options.forEach((opt, optIndex) => {
+                    let optionStyle = "bg-white hover:bg-blue-50 border-slate-200 text-slate-700";
+                    let badge = '';
+
+                    if (isAnswered) {
+                        const selectedOpt = currentAnswers[qIndex];
+                        if (optIndex === q.correct) {
+                            optionStyle = "bg-emerald-100 border-emerald-500 text-emerald-900 font-semibold";
+                            badge = '<i class="fa-solid fa-circle-check text-emerald-600 ml-auto"></i>';
+                        } else if (optIndex === selectedOpt) {
+                            optionStyle = "bg-rose-100 border-rose-500 text-rose-900 font-semibold";
+                            badge = '<i class="fa-solid fa-circle-xmark text-rose-600 ml-auto"></i>';
+                        } else {
+                            optionStyle = "bg-slate-100 border-slate-200 text-slate-400 opacity-60 cursor-not-allowed";
+                        }
+                    }
+
+                    optionsHTML += `
+                        <button 
+                            onclick="selectAnswer(${qIndex}, ${optIndex})" 
+                            ${isAnswered ? 'disabled' : ''} 
+                            class="w-full text-left p-3.5 rounded-xl border text-sm transition flex items-center justify-between mb-2 ${optionStyle}">
+                            <span><strong class="mr-2">${String.fromCharCode(65 + optIndex)}.</strong> ${opt}</span>
+                            ${badge}
+                        </button>
+                    `;
+                });
+
+                let explanationHTML = '';
+                if (isAnswered) {
+                    explanationHTML = `
+                        <div class="mt-3 p-3 bg-blue-50 border-l-4 border-blue-500 rounded-r-xl text-xs text-blue-900">
+                            <strong>Pembahasan:</strong> ${q.explanation}
+                        </div>
+                    `;
+                }
+
+                card.innerHTML = `
+                    <h4 class="font-bold text-slate-800 text-base mb-3">${q.question}</h4>
+                    <div class="space-y-1">${optionsHTML}</div>
+                    ${explanationHTML}
+                `;
+
+                container.appendChild(card);
+            });
+
+            updateScoreUI();
+        }
+
+        // Pilih Jawaban (Hanya BISA 1 KALI PILIH)
+        function selectAnswer(questionIndex, optionIndex) {
+            if (currentAnswers[questionIndex] !== null) return; // Mencegah klik ganda
+
+            currentAnswers[questionIndex] = optionIndex;
+            renderQuiz();
+
+            // Cek jika seluruh soal sudah dijawab
+            if (!currentAnswers.includes(null)) {
+                showQuizResult();
+            }
+        }
+
+        // Update Indikator Skor
+        function updateScoreUI() {
+            let total = 0;
+            currentAnswers.forEach((ans, idx) => {
+                if (ans === quizData[idx].correct) {
+                    total += 10;
+                }
+            });
+            userScore = total;
+            document.getElementById('current-score').innerText = `${userScore} / 100`;
+        }
+
+        // Tampilkan Hasil Kuis
+        function showQuizResult() {
+            const resultBox = document.getElementById('quiz-result');
+            const scoreText = document.getElementById('final-score-text');
+            const feedbackText = document.getElementById('score-feedback');
+
+            scoreText.innerText = userScore;
+
+            if (userScore >= 80) {
+                feedbackText.innerText = "Sangat Baik / Istimewa! 🎉";
+                feedbackText.className = "text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/30 text-emerald-200 border border-emerald-400/30";
+            } else if (userScore >= 60) {
+                feedbackText.innerText = "Baik / Cukup Paham 👍";
+                feedbackText.className = "text-xs font-semibold px-3 py-1 rounded-full bg-yellow-500/30 text-yellow-200 border border-yellow-400/30";
+            } else {
+                feedbackText.innerText = "Perlu Membaca Lagi Materi 📚";
+                feedbackText.className = "text-xs font-semibold px-3 py-1 rounded-full bg-rose-500/30 text-rose-200 border border-rose-400/30";
+            }
+
+            resultBox.classList.remove('hidden');
+        }
+
+        // Reset Quiz
+        function resetQuiz() {
+            currentAnswers = new Array(quizData.length).fill(null);
+            userScore = 0;
+            document.getElementById('quiz-result').classList.add('hidden');
+            renderQuiz();
+        }
+
+        // Handle Submit Refleksi
+        function handleRefleksiSubmit(event) {
+            event.preventDefault();
+            const feedback = document.getElementById('refleksi-feedback');
+            feedback.classList.remove('hidden');
+            setTimeout(() => {
+                feedback.classList.add('hidden');
+            }, 4000);
+        }
+
+        // Initializer saat halaman dimuat
+        window.onload = function() {
+            renderQuiz();
+        };
+    </script>
+</body>
+</html>
